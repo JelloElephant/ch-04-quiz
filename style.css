@@ -9,10 +9,14 @@ header {
     padding-bottom: 75px;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.quizHome {
+    display: none;
+}
+
+.next {
+    position: relative;
+    left: 30%;
+    top: 120px;
 }
 
 .button {
@@ -25,4 +29,21 @@ header {
     font-size: 15px;
     font-weight: bold;
     max-width: 150px;
+}
+
+.inProgress {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.Question {
+    position: relative;
+    left: 11%;
+}
+
+.choices {
+    position: relative;
+    top: 150px;
+    right: 0%;
 }

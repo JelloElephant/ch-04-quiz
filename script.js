@@ -1,40 +1,40 @@
 // List of quiz questions
 var questions = [
 
+        {q: 'aa',
+        options:   {a: 'bb',
+            b: 'ss',
+            c: 'dd',
+            d: 'ff',},
+        ans: 'ff'
+    },
         {q: '',
-        a: '',
-        b: '',
-        c: '',
-        d: '',
+        options:   {a: '',
+            b: '',
+            c: '',
+            d: '',},
         ans: ''
     },
         {q: '',
-        a: '',
-        b: '',
-        c: '',
-        d: '',
+        options:   {a: '',
+            b: '',
+            c: '',
+            d: '',},
         ans: ''
     },
         {q: '',
-        a: '',
-        b: '',
-        c: '',
-        d: '',
-        ans: ''
-    },
-        {q: '',
-        a: '',
-        b: '',
-        c: '',
-        d: '',
+        options:   {a: '',
+            b: '',
+            c: '',
+            d: '',},
         ans: ''
     },
 
         {q: '',
-        a: '',
-        b: '',
-        c: '',
-        d: '',
+         options:   {a: '',
+            b: '',
+            c: '',
+            d: '',},
         ans: ''
     },
 ];
@@ -42,30 +42,30 @@ var questions = [
 var button = document.querySelector(".button");
 var answers = document.querySelectorAll(".answer")
 var currQuest = document.querySelector(".Question");
-var aAns = document.getElementById(".a_text");
-var bAns = document.getElementById(".b_text")
-var cAns = document.getElementById(".c_text")
-var dAns = document.getElementById(".d_text")
-var start = document.getElementById("start")
+var aAns = document.getElementById("a");
+var bAns = document.getElementById("b");
+var cAns = document.getElementById("c");
+var dAns = document.getElementById("d");
+var next = document.getElementById("next");
 var qCounter = 0;
 var time = 300;
 
 
 // TODO: Load quiz
 function loadQuestion() {
-    
-    clearLastQ()
-
-    var qData = questions[qCounter]
-
-    currQuest.innerHTML = qData.q
-    aAns.innerText = qData.a
-    bAns.innerText = qData.b
-    cAns.innerText = qData.c
-    dAns.innerText = qData.d
+    var activeQ = questions[index]
+    currQuest.innerHTML = activeQ.q;
+    aAns.innerHTML = activeQ.options.a;
+    bAns.innerHTML = activeQ.options.b;
+    cAns.innerHTML = activeQ.options.c;
+    dAns.innerHTML = activeQ.options.d;
+    questions.pop(activeQ);
 }
 
-function clearLastQ() {
-    answers.forEach(answers => answers.checked = false)
-}
+
+//TODO: Timer function
+
+
+//Progresses through the quiz
+loadQuestion();
 

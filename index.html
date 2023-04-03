@@ -19,7 +19,7 @@
 
 
             <div class="next">
-                <button class="button" id="next">Press me to Start!</button>
+                <button onclick="handleNext()" class="button" id="next">Press me to Start!</button>
             </div>
         </div>
 
@@ -31,32 +31,38 @@
             </div>
             <ul class="choices">
                 <li>
+                    <label for="" id=".a_text">
                     <input type="radio" name="answer" id="a" class="answer">
-                    <label for="" id=".a_text">Ans</label>
+                    Ans</label>
                 </li>
 
                 <li>
+                    <label for="" id=".b_text">
                     <input type="radio" name="answer" id="b" class="answer">
-                    <label for="" id=".b_text">Ans</label>
+                    Ans</label>
                 </li>
 
                 <li>
+                    <label for="" id=".c_text">
                     <input type="radio" name="answer" id="c" class="answer">
-                    <label for="" id=".c_text">Ans</label>
+                    Ans</label>
                 </li>
 
                 <li>
+                    <label for="" id=".d_text">
                     <input type="radio" name="answer" id="d" class="answer">
-                    <label for="" id=".d_text">Ans</label>
+                    Ans</label>
                 </li>
+                
             </ul>
             <div class="next">
-                <button type="button" class="button" id="next">Next</button>
+                <button onclick="handleNext()" type="button" class="button" id="next">Next</button>
             </div>
         </div>
 
         <div class="complete">
-
+                <!--TODO: State score out of 5 here-->
+                <!--TODO: Save initials and score here-->
         </div>
 
         

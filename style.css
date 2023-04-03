@@ -14,8 +14,8 @@ header {
 }
 
 .next {
-    position: relative;
-    left: 30%;
+    position: absolute;
+    right: 10%;
     top: 120px;
 }
 
@@ -38,12 +38,12 @@ header {
 }
 
 .Question {
-    position: relative;
-    left: 11%;
+    position: absolute;
+    top: 5%;
 }
 
 .choices {
-    position: relative;
-    top: 150px;
-    right: 0%;
+    position: absolute;
+    top: 15%;
+    left: 45%;
 }

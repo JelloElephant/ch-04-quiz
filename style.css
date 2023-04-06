@@ -10,7 +10,7 @@ header {
 }
 
 .quizHome {
-    display: none;
+    display: flex;
 }
 
 .next {
@@ -32,7 +32,7 @@ header {
 }
 
 .inProgress {
-    display: flex;
+    display: none;
     align-items:center;
     justify-content: center;
 }
@@ -46,4 +46,8 @@ header {
     position: absolute;
     top: 15%;
     left: 45%;
+}
+
+.complete {
+    display: none;
 }

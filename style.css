@@ -15,6 +15,7 @@ header {
 
 .quizHome {
     background-color: #ffffffff;
+    font-family: 'comic sans' 'times new roman';
     border-radius: 20px;
     display: flex;
 }
@@ -26,8 +27,8 @@ header {
 }
 
 .button {
-    background-color: blueviolet;
-    color: rgb(209, 209, 209);
+    background-color: #daa520;
+    color: #000;
     border-radius: 25px;
     border-width: 2px;
     width: 300px;
@@ -47,6 +48,7 @@ header {
 }
 
 .Question {
+    font-family: 'comic sans' 'times new roman';
     position: absolute;
     top: 5%;
 }
@@ -60,11 +62,17 @@ header {
 .choices {
     position: absolute;
     top: 15%;
-    left: 45%;
+    left: 25%;
 }
 
-.answer {
-
+.choices li {
+    list-style: none;
+    background-color: #daa520;
+    border-radius: 30px;
+    justify-content: center;
+    padding-top: 2px;
+    height: 30px;
+    width: 400px;
 }
 
 .complete {

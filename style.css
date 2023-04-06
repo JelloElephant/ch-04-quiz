@@ -2,6 +2,10 @@
 
 }
 
+body {
+    background-color: #800000;
+}
+
 header {
     text-align: center;
     padding: 15px;
@@ -10,6 +14,8 @@ header {
 }
 
 .quizHome {
+    background-color: #ffffffff;
+    border-radius: 20px;
     display: flex;
 }
 
@@ -33,13 +39,22 @@ header {
 
 .inProgress {
     display: none;
+    border-radius: 20px;
+    background-color: #ffffffff;
     align-items:center;
     justify-content: center;
+    height: 300px;
 }
 
 .Question {
     position: absolute;
     top: 5%;
+}
+
+.timer {
+    position: absolute;
+    top: 5%;
+    right: 10%;
 }
 
 .choices {
@@ -48,6 +63,13 @@ header {
     left: 45%;
 }
 
+.answer {
+
+}
+
 .complete {
     display: none;
+    border-radius: 20px;
+    background-color: #ffffffff;
+    height: fit-content;
 }

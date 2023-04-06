@@ -27,7 +27,7 @@ var questions = [
         b: 'in',
         c: 'in',
         d: 'in',},
-    ans: 'corr'
+        ans: 'corr'
     },
 
         {q: '5 check',
@@ -35,7 +35,7 @@ var questions = [
         b: 'corr',
         c: 'in',
         d: 'in',},
-    ans: 'corr'
+        ans: 'corr'
     },
 ];
 
@@ -50,7 +50,7 @@ var options = document.getElementsByName('answer');
 var timeEl = document.querySelector(".timer");
 var qCounter = 0;
 var numCorr = 0;
-var time = 300;
+var time = 15;
 
 
 // Load quiz question and options, then remove question from list
@@ -101,18 +101,25 @@ function Timer() {
         timeEl.textContent = time + " remaining";
         time--;
 
-        if (time == 0) {
+        if (time === 0) {
             clearInterval(timerInt);
         }
     }, 1000)
 }
 
-//Progresses through the quiz
-function handleNext() {
 
+// Start the Quiz
+function startQuiz() {
     document.querySelector(".quizHome").style.display = 'none';
     document.querySelector(".inProgress").style.display = "flex";
     Timer();
+    loadQuestion(qCounter);
+    qCounter++;
+}
+
+
+//Progresses through the quiz
+function handleNext() {
     //Check to see if user is correct
     ansCheck();
     clearLast();

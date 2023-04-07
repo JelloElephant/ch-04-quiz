@@ -50,17 +50,17 @@ var options = document.getElementsByName('answer');
 var timeEl = document.querySelector(".timer");
 var qCounter = 0;
 var numCorr = 0;
-var time = 15;
+var time = 100;
 
 
 // Load quiz question and options, then remove question from list
 function loadQuestion(index) {
     var activeQ = questions[index]
-    currQuest.innerHTML = activeQ.q;
-    aAns.innerHTML = activeQ.options.a;
-    bAns.innerHTML = activeQ.options.b;
-    cAns.innerHTML = activeQ.options.c;
-    dAns.innerHTML = activeQ.options.d;
+    currQuest.textContent = activeQ.q;
+    aAns.textContent = activeQ.options.a;
+    bAns.textContent = activeQ.options.b;
+    cAns.textContent = activeQ.options.c;
+    dAns.textContent = activeQ.options.d;
 }
 
 // Function to check if User is same as question answer
@@ -68,26 +68,14 @@ function ansCheck() {
     var curQ = questions[qCounter];
     var curQAns = curQ.ans;
     var options = document.getElementsByName('answer');
-    var corrAns = null;
-
-    options.forEach((answer) => {
-        if (answer.value === curQAns) {
-            corrAns = answer.labels[0].id
-        } 
-    })
-
-    if (aAns.checked === false && bAns.checked === false && cAns.checked === false && dAns.checked === false) {
-
-    }
-   
 
     //Compairs user answer with correct answer
     options.forEach((answer) => {
-        if (answer.checked === true && answer.value === curQAns) {
+        if (answer.checked === true && answer.labels[0].textContent === curQAns) {
             //Add to numCorr if user is right
             numCorr++;
 
-        }else if (answer.checked && answer.value !== curQAns) {
+        }else if (answer.checked && answer.labels[0].textContent !== curQAns) {
             //lose time if incorrect
             time-= 15;
         }
@@ -101,11 +89,12 @@ function Timer() {
         timeEl.textContent = time + " remaining";
         time--;
 
-        if (time === 0) {
+        if (time <= 0) {
             clearInterval(timerInt);
         }
     }, 1000)
 }
+
 
 
 // Start the Quiz
@@ -114,7 +103,6 @@ function startQuiz() {
     document.querySelector(".inProgress").style.display = "flex";
     Timer();
     loadQuestion(qCounter);
-    qCounter++;
 }
 
 
@@ -124,10 +112,11 @@ function handleNext() {
     ansCheck();
     clearLast();
     
-    if (qCounter <= questions.length) {
+    qCounter++;
+    if (qCounter < questions.length) {
         loadQuestion(qCounter);
-        qCounter++;
-    } else if (time === 0 || qCounter === 4) {
+    } else if (qCounter === questions.length) {
+        
         document.querySelector(".inProgress").style.display = "none";
         document.querySelector(".complete").style.display = "flex";
     }

@@ -2,6 +2,10 @@
 
 }
 
+body {
+    background-color: #800000;
+}
+
 header {
     text-align: center;
     padding: 15px;
@@ -9,15 +13,22 @@ header {
     padding-bottom: 75px;
 }
 
-.container {
+.quizHome {
+    background-color: #ffffffff;
+    font-family: 'comic sans' 'times new roman';
+    border-radius: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.next {
+    position: absolute;
+    right: 10%;
+    top: 120px;
 }
 
 .button {
-    background-color: blueviolet;
-    color: rgb(209, 209, 209);
+    background-color: #daa520;
+    color: #000;
     border-radius: 25px;
     border-width: 2px;
     width: 300px;
@@ -25,4 +36,65 @@ header {
     font-size: 15px;
     font-weight: bold;
     max-width: 150px;
+}
+
+.inProgress {
+    display: none;
+    border-radius: 20px;
+    background-color: #ffffffff;
+    align-items:center;
+    justify-content: center;
+    height: 300px;
+}
+
+.Question {
+    font-family: 'comic sans' 'times new roman';
+    position: absolute;
+    top: 5%;
+}
+
+.timer {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+}
+
+.choices {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    justify-content: space-between;
+}
+
+.choices li {
+    list-style: none;
+    background-color: #daa520;
+    border-radius: 30px;
+    justify-content: center;
+    padding-top: 2px;
+    height: 30px;
+    width: 400px;
+}
+
+.complete {
+    display: none;
+    border-radius: 20px;
+    background-color: #ffffffff;
+    height: 25vh;
+}
+
+h2 {
+    display: none;
+    justify-content: center;
+}
+
+.playerInfo {
+    display: flex;
+    align-items: center;
+    padding-top: 10%;
+}
+
+.svBttn {
+    position: relative;
+    top: 55%;
 }

@@ -1,41 +1,41 @@
 // List of quiz questions
 var questions = [
 
-        {q: 'aa',
-        options:   {a: 'bb',
-            b: 'ss',
-            c: 'dd',
-            d: 'ff',},
-        ans: 'ff'
+        {q: 'Which HTML element is used to put the JavaScript code?',
+        options:   {a: '<script>',
+            b: '<javascript>',
+            c: '<js>',
+            d: '<scripting>',},
+        ans: '<script>'
     },
-        {q: '2 check',
-        options:   {a: 'in',
-            b: 'in',
-            c: 'corr',
-            d: 'in',},
-        ans: 'corr'
+        {q: 'The "function" and " var" are known as:',
+        options:   {a: 'Keywords',
+            b: 'Data types',
+            c: 'Declaration statements',
+            d: 'Prototypes',},
+        ans: 'Declaration statements'
     },
-        {q: '3 check',
-        options:   {a: 'in',
-            b: 'in',
-            c: 'in',
-            d: 'corr',},
-        ans: 'corr'
+        {q: 'In the JavaScript, which one of the following is not considered as an error:',
+        options:   {a: 'Syntax error',
+            b: 'Missing of semicolons',
+            c: 'Missing of Bracket',
+            d: 'Division by zero',},
+        ans: 'Division by zero'
     },
-        {q: '4 check',
-        options:   {a: 'corr',
-        b: 'in',
-        c: 'in',
-        d: 'in',},
-        ans: 'corr'
+        {q: 'Suppose we have a text "human" that we want to convert into string without using the "new" operator. Which is the correct way from the following to do so:',
+        options:   {a: 'Both human.toString() and String(human)',
+        b: 'toString()',
+        c: 'String(human)',
+        d: 'String newvariable="human"',},
+        ans: 'Both human.toString() and String(human)'
     },
 
-        {q: '5 check',
-        options:   {a: 'in',
-        b: 'corr',
-        c: 'in',
-        d: 'in',},
-        ans: 'corr'
+        {q: 'What happens if the return statement has no related expression?',
+        options:   {a: 'It will throw a exception',
+        b: 'It will return a undefined value',
+        c: 'It will return the 0 as the value',
+        d: 'It will throw a error',},
+        ans: 'It will return a undefined value'
     },
 ];
 
@@ -116,7 +116,6 @@ function handleNext() {
     if (qCounter < questions.length) {
         loadQuestion(qCounter);
     } else if (qCounter === questions.length) {
-        
         document.querySelector(".inProgress").style.display = "none";
         document.querySelector(".complete").style.display = "flex";
     }
@@ -133,6 +132,29 @@ function clearLast() {
 }
 
 
+// Function on save button to save and print player score on page
+function saveScore() {
+    var user = document.getElementById('pName');
+    
+    var playerHS = {
+        "userName": user.value,
+        "userScore": numCorr,
+    }
+    
+    localStorage.setItem("HighScore", JSON.stringify(playerHS));
 
-var highScore = localStorage.setItem(document.getElementById('pName'), value);
+    printScore();
 
+}
+
+
+// Get High Score info and display on page
+function printScore() {
+ 
+    document.querySelector('.playerInfo').style.display = 'none';
+    document.querySelector('.highScore').style.display = 'flex'
+
+    var final =  JSON.parse(localStorage.getItem("HighScore"));
+    
+    document.querySelector('.highScore').textContent =  final.userName + " : " + final.userScore + "/" + questions.length;
+}

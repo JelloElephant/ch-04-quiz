@@ -63,6 +63,7 @@ header {
     position: absolute;
     top: 15%;
     left: 25%;
+    justify-content: space-between;
 }
 
 .choices li {
@@ -79,5 +80,21 @@ header {
     display: none;
     border-radius: 20px;
     background-color: #ffffffff;
-    height: fit-content;
+    height: 25vh;
+}
+
+h2 {
+    display: none;
+    justify-content: center;
+}
+
+.playerInfo {
+    display: flex;
+    align-items: center;
+    padding-top: 10%;
+}
+
+.svBttn {
+    position: relative;
+    top: 55%;
 }
